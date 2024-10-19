@@ -5,23 +5,20 @@
 
 ### 效果：
 
-![image](https://github.com/976431yang/YQNumberSlideView/blob/master/YQNumberSlideView_DEMO/screenShot/2017-05-13-15_05_53.gif) </br>
-![image](https://github.com/976431yang/YQNumberSlideView/blob/master/YQNumberSlideView_DEMO/screenShot/2017-05-13-15_10_45.gif)
+![image](https://github.com/976431yang/YQHorizonalSlider/blob/master/YQNumberSlideView_DEMO/screenShot/2017-05-13-15_05_53.gif) </br>
+![image](https://github.com/976431yang/YQHorizonalSlider/blob/master/YQNumberSlideView_DEMO/screenShot/2017-05-13-15_10_45.gif)
 
 ### 使用方法：
 ##### 直接拖到工程中
 ##### 引入
 ```objective-c
-#import "YQNumberSlideView.h"
+#import "YQHorizonalSlider.h"
 ```
 
 ##### 最简单的使用方法
 ```objective-c
     //初始化
-    YQNumberSlideView *slideView = [[YQNumberSlideView alloc]initWithFrame:CGRectMake(x,
-                                                                                      y,
-                                                                                      width,
-                                                                                      height)];
+    YQHorizonalSlider *slideView = [[YQNumberSlideView alloc]initWithFrame:CGRectMake(x, y, width, height)];
     //设置数量
     [slideView setLableCount:20];
     //添加到View上显示
@@ -38,7 +35,7 @@
     slideView.delegate = self;
 
  //遵循代理
- -(void)YQSlideViewDidChangeIndex:(int)count
+ -(void)horizonalSliderDidChangeIndex:(int)count
 {
     //count即是选择的序号
 }
@@ -69,10 +66,10 @@
 	slideView.LabColor;
     
 	//二级Lable透明度，默认0.6
-	slideView.SecLevelAlpha;
+	slideView.secLevelAlpha;
     
 	//三级Lable透明度，默认0.2
-	slideView.ThirdLevelAlpha;
+	slideView.thirdLevelAlpha;
 
 	//!!!!!!调用完  要调一下 刷新显示，才能生效!!!!!!
 	[slideView show];

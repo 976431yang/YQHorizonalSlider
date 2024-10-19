@@ -15,7 +15,7 @@
 		95F81C9A1EC6D41600579A30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F81C981EC6D41600579A30 /* LaunchScreen.storyboard */; };
 		95F81CA51EC6D41600579A30 /* YQNumberSlideView_DEMOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F81CA41EC6D41600579A30 /* YQNumberSlideView_DEMOTests.m */; };
 		95F81CB01EC6D41600579A30 /* YQNumberSlideView_DEMOUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F81CAF1EC6D41600579A30 /* YQNumberSlideView_DEMOUITests.m */; };
-		95F81CC31EC6E9E900579A30 /* YQNumberSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F81CC21EC6E9E900579A30 /* YQNumberSlideView.m */; };
+		95F81CC31EC6E9E900579A30 /* YQHorizonalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F81CC21EC6E9E900579A30 /* YQHorizonalSlider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,8 @@
 		95F81CAB1EC6D41600579A30 /* YQNumberSlideView_DEMOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YQNumberSlideView_DEMOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F81CAF1EC6D41600579A30 /* YQNumberSlideView_DEMOUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YQNumberSlideView_DEMOUITests.m; sourceTree = "<group>"; };
 		95F81CB11EC6D41600579A30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95F81CC11EC6E9E900579A30 /* YQNumberSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQNumberSlideView.h; sourceTree = "<group>"; };
-		95F81CC21EC6E9E900579A30 /* YQNumberSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQNumberSlideView.m; sourceTree = "<group>"; };
+		95F81CC11EC6E9E900579A30 /* YQHorizonalSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQHorizonalSlider.h; sourceTree = "<group>"; };
+		95F81CC21EC6E9E900579A30 /* YQHorizonalSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQHorizonalSlider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 		95F81C891EC6D41600579A30 /* YQNumberSlideView_DEMO */ = {
 			isa = PBXGroup;
 			children = (
-				95F81CC01EC6E9E900579A30 /* YQNumberSlideView */,
+				95F81CC01EC6E9E900579A30 /* YQHorizonalSlider */,
 				95F81C8D1EC6D41600579A30 /* AppDelegate.h */,
 				95F81C8E1EC6D41600579A30 /* AppDelegate.m */,
 				95F81C901EC6D41600579A30 /* ViewController.h */,
@@ -144,13 +144,13 @@
 			path = YQNumberSlideView_DEMOUITests;
 			sourceTree = "<group>";
 		};
-		95F81CC01EC6E9E900579A30 /* YQNumberSlideView */ = {
+		95F81CC01EC6E9E900579A30 /* YQHorizonalSlider */ = {
 			isa = PBXGroup;
 			children = (
-				95F81CC11EC6E9E900579A30 /* YQNumberSlideView.h */,
-				95F81CC21EC6E9E900579A30 /* YQNumberSlideView.m */,
+				95F81CC11EC6E9E900579A30 /* YQHorizonalSlider.h */,
+				95F81CC21EC6E9E900579A30 /* YQHorizonalSlider.m */,
 			);
-			path = YQNumberSlideView;
+			path = YQHorizonalSlider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +242,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -291,7 +292,7 @@
 			files = (
 				95F81C921EC6D41600579A30 /* ViewController.m in Sources */,
 				95F81C8F1EC6D41600579A30 /* AppDelegate.m in Sources */,
-				95F81CC31EC6E9E900579A30 /* YQNumberSlideView.m in Sources */,
+				95F81CC31EC6E9E900579A30 /* YQHorizonalSlider.m in Sources */,
 				95F81C8C1EC6D41600579A30 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

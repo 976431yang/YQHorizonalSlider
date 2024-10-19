@@ -9,16 +9,16 @@
 #import <UIKit/UIKit.h>
 
 
-@protocol YQNumberSlideViewDelegate <NSObject>
+@protocol YQHorizonalSliderDelegate <NSObject>
 
-- (void)YQSlideViewDidChangeIndex:(int)count;
+- (void)horizonalSliderDidChangeIndex:(int)count;
 
-- (void)YQSlideViewDidTouchIndex:(int)count;
+- (void)horizonalSliderDidTouchIndex:(int)count;
 
 @end
 
 
-@interface YQNumberSlideView :UIView
+@interface YQHorizonalSlider :UIView
 
 #pragma mark -----------------------Function
 
@@ -32,7 +32,7 @@
  *
  *  @param count 数量
  */
-- (void)setLableCount:(int)count;
+- (void)setLabelCount:(int)count;
 
 /**
  *  设置显示的内容数组，不设置的话显示数字
@@ -61,42 +61,42 @@
 /**
  *  代理
  */
-@property(nonatomic,weak) id <YQNumberSlideViewDelegate> delegate;
+@property(nonatomic,weak) id <YQHorizonalSliderDelegate> delegate;
 
 /**
- *  每个显示的Lable的宽度,默认33,(宽度不够会导致字体变小)
+ *  每个显示的Label的宽度,默认33,(宽度不够会导致字体变小)
  */
-@property CGFloat lableWidth;
+@property CGFloat labelWidth;
 
 /**
- *  每个显示的Lable的间隔，默认20
+ *  每个显示的Label的间隔，默认20
  */
-@property CGFloat lableMid;
+@property CGFloat labelMid;
 
 /**
- *  选中的Lable的高度,默认25
+ *  选中的Label的高度,默认25
  */
 @property CGFloat maxHeight;
 
 /**
- *  未选中的Lable的高度，默认15
+ *  未选中的Label的高度，默认15
  */
 @property CGFloat minHeight;
 
 /**
  *  lbale的颜色，默认黑色
  */
-@property (nonatomic,strong)UIColor *LabColor;
+@property (nonatomic,strong) UIColor *labColor;
 
 /**
- *  二级Lable透明度，默认0.6
+ *  二级Label透明度，默认0.6
  */
-@property CGFloat SecLevelAlpha;
+@property CGFloat secLevelAlpha;
 
 /**
- *  三级Lable透明度，默认0.2
+ *  三级Label透明度，默认0.2
  */
-@property CGFloat ThirdLevelAlpha;
+@property CGFloat thirdLevelAlpha;
 
 /**
  *  焦点变色模式（beta）
@@ -108,8 +108,8 @@
  *  @param sg 非焦点绿 0~1
  *  @param sb 非焦点蓝 0~1
  */
-- (void)DiffrentColorModeWithMainColorR:(float)mr G:(float)mg B:(float)mb
-                             SecColorR:(float)sr G:(float)sg B:(float)sb;
+- (void)diffrentColorModeWithMainColorR:(float)mr G:(float)mg B:(float)mb
+                             secColorR:(float)sr G:(float)sg B:(float)sb;
 
 
 @end
