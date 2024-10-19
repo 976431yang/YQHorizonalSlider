@@ -1,4 +1,4 @@
-# YQNumberSlideView
+# YQHorizonalSlider
 横向滚动的选择器，灵活自定义
 
 #### 微博：畸形滴小男孩
