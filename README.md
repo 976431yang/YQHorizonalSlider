@@ -19,12 +19,12 @@
 ```objective-c
     //初始化
     YQHorizonalSlider *slideView = [[YQNumberSlideView alloc]initWithFrame:CGRectMake(x, y, width, height)];
-    //设置数量
-    [slideView setLableCount:20];
-    //添加到View上显示
+    // 展示数字
+    [slideView showNumbersWithCount:20];
+    // 添加到View上显示
     [self.view addSubview:slideView];
 
-    //(可选)加个背景色，方便自己看范围
+    // (可选)加个背景色，方便自己看范围
     slideView.backgroundColor = [UIColor colorWithWhite:0.931 alpha:1.000];
 ```
 ###### 完事了，已经可以显示了。
@@ -43,10 +43,7 @@
 
 ##### 自定义显示内容（想上面的图片中显示的“小红”“小明”等）
 ```objective-c
-	[slideView setLableCount:8];
-	[slideView setShowArray:@[@"小明",@"小红",@"小方",@"小亮",@"小华",@"小坏",@"小丑",@"小帅",]];
-
-    //注意LableCount要和ShowArray的个数保持一致
+	[slideView showTitlesWithArray:@[@"小明",@"小红",@"小方",@"小亮",@"小华",@"小坏",@"小丑",@"小帅",]];
 ```
 ##### 更多自定义显示样式
 ```objective-c
@@ -72,15 +69,15 @@
 	slideView.thirdLevelAlpha;
 
 	//!!!!!!调用完  要调一下 刷新显示，才能生效!!!!!!
-	[slideView show];
+	[slideView reload];
 ```
     
 ##### 焦点变色模式
 ```objective-c
-	[slideView DiffrentColorModeWithMainColorR:0.154 G:1.000 B:0.063 
+	[slideView diffrentColorModeWithMainColorR:0.154 G:1.000 B:0.063 
                                      SecColorR:0.281 G:0.772 B:0.970];
 
 	//!!!!!!调用完  要调一下 刷新显示，才能生效!!!!!!
-	[slideView show];
+	[slideView reload];
 ```
 

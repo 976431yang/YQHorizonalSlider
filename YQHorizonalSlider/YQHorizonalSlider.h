@@ -25,21 +25,21 @@
 /**
  *  刷新显示-如果有自定义样式，需要调用此方法
  */
-- (void)show;
+- (void)reload;
 
 /**
- *  设置数量
+ *  展示数字
  *
  *  @param count 数量
  */
-- (void)setLabelCount:(int)count;
+- (void)showNumbersWithCount:(int)count;
 
 /**
- *  设置显示的内容数组，不设置的话显示数字
+ *  展示自定义文字
  *
- *  @param arr 内容
+ *  @param arr 文字内容
  */
-- (void)setShowArray:(NSArray *)arr;
+- (void)showTitlesWithArray:(NSArray <NSString * > *)arr;
 
 /**
  *  手动跳转到下一个
@@ -63,40 +63,26 @@
  */
 @property(nonatomic,weak) id <YQHorizonalSliderDelegate> delegate;
 
-/**
- *  每个显示的Label的宽度,默认33,(宽度不够会导致字体变小)
- */
-@property CGFloat labelWidth;
+/// 每个显示的Label的宽度,默认33,(宽度不够会导致字体变小)
+@property (nonatomic, assign) CGFloat labelWidth;
 
-/**
- *  每个显示的Label的间隔，默认20
- */
-@property CGFloat labelMid;
+/// 每个显示的Label的间隔，默认20
+@property (nonatomic, assign) CGFloat labelMid;
 
-/**
- *  选中的Label的高度,默认25
- */
-@property CGFloat maxHeight;
+/// 选中的Label的高度,默认25
+@property (nonatomic, assign) CGFloat maxHeight;
 
-/**
- *  未选中的Label的高度，默认15
- */
-@property CGFloat minHeight;
+/// 未选中的Label的高度，默认15
+@property (nonatomic, assign) CGFloat minHeight;
 
-/**
- *  lbale的颜色，默认黑色
- */
+/// lbabel的颜色，默认黑色
 @property (nonatomic,strong) UIColor *labColor;
 
-/**
- *  二级Label透明度，默认0.6
- */
-@property CGFloat secLevelAlpha;
+/// 二级Label透明度，默认0.6
+@property (nonatomic, assign) CGFloat secLevelAlpha;
 
-/**
- *  三级Label透明度，默认0.2
- */
-@property CGFloat thirdLevelAlpha;
+/// 三级Label透明度，默认0.2
+@property (nonatomic, assign) CGFloat thirdLevelAlpha;
 
 /**
  *  焦点变色模式（beta）
@@ -109,7 +95,7 @@
  *  @param sb 非焦点蓝 0~1
  */
 - (void)diffrentColorModeWithMainColorR:(float)mr G:(float)mg B:(float)mb
-                             secColorR:(float)sr G:(float)sg B:(float)sb;
+                              secColorR:(float)sr G:(float)sg B:(float)sb;
 
 
 @end

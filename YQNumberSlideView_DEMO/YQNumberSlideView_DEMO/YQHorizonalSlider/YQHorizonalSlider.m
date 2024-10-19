@@ -39,13 +39,13 @@
     self = [super initWithFrame:frame];
     
     //--------------------------------------------------默认参数
-    self.labelWidth      = 33;
-    self.labelMid        = 20;
-    self.maxHeight       = 25;
-    self.minHeight       = 15;
-    self.secLevelAlpha   = 0.6;
-    self.thirdLevelAlpha = 0.2;
-    self.labColor        = [UIColor blackColor];
+    _labelWidth      = 33;
+    _labelMid        = 20;
+    _maxHeight       = 25;
+    _minHeight       = 15;
+    _secLevelAlpha   = 0.6;
+    _thirdLevelAlpha = 0.2;
+    _labColor        = [UIColor blackColor];
     
     //--------------------------------------------------相关View初始化
     
@@ -64,7 +64,7 @@
     return self;
 }
 
-- (void)show {
+- (void)reload {
     if (self.slideLabArr.count>0) {
         for (UILabel *lab in self.slideLabArr) {
             [lab removeFromSuperview];
@@ -136,20 +136,16 @@
     }
 }
 
-- (void)setLabelCount:(int)count {
+- (void)showNumbersWithCount:(int)count {
     self.allcount = count;
-    [self show];
+    self.showArr = nil;
+    [self reload];
 }
 
-- (void)setShowArray:(NSArray *)arr {
+- (void)showTitlesWithArray:(NSArray <NSString * > *)arr {
     self.showArr = [NSMutableArray arrayWithArray:arr];
-    if (self.showArr.count < self.allcount) {
-        for (int i=0; i < self.allcount - self.showArr.count; i++) {
-            [self.showArr addObject:@" "];
-        }
-    }
-    
-    [self show];
+    self.allcount = (int)arr.count;
+    [self reload];
 }
 
 - (void)didTap:(UITapGestureRecognizer *)tap {
@@ -200,7 +196,7 @@
                                           (self.maxHeight - self.minHeight) *
                                           offsetRait);
             showingLab.font = [UIFont systemFontOfSize:kViewHeight(showingLab)];
-            showingLab.alpha = 1- (1-self.secLevelAlpha)*(1-offsetRait);
+            showingLab.alpha = 1 - (1 - self.secLevelAlpha) * (1 - offsetRait);
             
             if (self.colorMode) {
                 float colorRait = (showingLab.alpha - self.secLevelAlpha) /
@@ -213,7 +209,7 @@
             UILabel *nextLab = self.slideLabArr[count+1];
             if (nextLab) {
                 nextLab.frame = CGRectMake(kViewX(nextLab),
-                                           (self.maxHeight-self.minHeight) *
+                                           (self.maxHeight - self.minHeight) *
                                            offsetRait,
                                            kViewWidth(nextLab),
                                            self.minHeight +
